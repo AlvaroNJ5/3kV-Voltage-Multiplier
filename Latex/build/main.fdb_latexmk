@@ -1,17 +1,17 @@
 # Fdb version 4
-["biber build/main"] 1739906599 "build/main.bcf" "build/main.bbl" "build/main" 1739906654 0
+["biber build/main"] 1739906599 "build/main.bcf" "build/main.bbl" "build/main" 1739907399 0
   "./references.bib" 1739906330 0 d41d8cd98f00b204e9800998ecf8427e ""
-  "build/main.bcf" 1739906653 106964 82f3b41e120ea282173693e14f79d7f9 "xelatex"
+  "build/main.bcf" 1739907399 106964 82f3b41e120ea282173693e14f79d7f9 "xelatex"
   (generated)
   "build/main.bbl"
   "build/main.blg"
   (rewritten before read)
-["xdvipdfmx"] 1739906654 "build/main.xdv" "build/main.pdf" "build/main" 1739906654 0
-  "build/main.xdv" 1739906653 4508 201245166e58b12af0379cfb35ea509f "xelatex"
+["xdvipdfmx"] 1739907399 "build/main.xdv" "build/main.pdf" "build/main" 1739907399 0
+  "build/main.xdv" 1739907399 4508 ebda80d72759f958bf07bb799076d698 "xelatex"
   (generated)
   "build/main.pdf"
   (rewritten before read)
-["xelatex"] 1739906650 "e:/MÁSTER MPOWER/ASIGNATURAS/Máquinas Eléctricas/Alta Tensión/Trabajo/3kV-Voltage-Multiplier/Latex/main.tex" "build/main.xdv" "main" 1739906654 0
+["xelatex"] 1739907396 "e:/MÁSTER MPOWER/ASIGNATURAS/Máquinas Eléctricas/Alta Tensión/Trabajo/3kV-Voltage-Multiplier/Latex/main.tex" "build/main.xdv" "main" 1739907399 0
   "C:/Program Files/MiKTeX/fonts/tfm/adobe/zapfding/pzdr.tfm" 1136768654 1528 7e12f4c0fcf5a072cebdcfbfc610f54c ""
   "C:/Program Files/MiKTeX/tex/generic/atbegshi/atbegshi.sty" 1575571100 24708 5584a51a7101caf7e6bbf1fc27d8f7b1 ""
   "C:/Program Files/MiKTeX/tex/generic/babel/babel.sty" 1696003893 148153 9c54923e1dc8a9549df289a28e494974 ""
@@ -117,16 +117,17 @@
   "C:/Users/Pepe/AppData/Roaming/MiKTeX/tex/latex/rerunfilecheck/rerunfilecheck.sty" 1657800696 9714 ba3194bd52c8499b3f1e3eb91d409670 ""
   "C:/Users/Pepe/AppData/Roaming/MiKTeX/tex/latex/setspace/setspace.sty" 1670403145 22490 8cac309b79a4c53a4ffce4b1b07aead0 ""
   "C:/Users/Pepe/AppData/Roaming/MiKTeX/tex/latex/titlesec/titlesec.sty" 1699094857 48766 0b93839be28e9744a24c45075c75b2e2 ""
-  "build/main.aux" 1739906653 1075 5eb2b63e3e7c406304e07d3b37bfd6e0 "xelatex"
+  "build/main.aux" 1739907398 1075 5eb2b63e3e7c406304e07d3b37bfd6e0 "xelatex"
   "build/main.bbl" 1739906647 486 ee04f40f768daeed26442158e95aba61 "biber build/main"
-  "build/main.lof" 1739906653 30 1bb04962d39b6bda471ac6c46ce13f85 "xelatex"
-  "build/main.out" 1739906653 202 3060310b16d199fb9f073de61bf9b2a1 "xelatex"
-  "build/main.run.xml" 1739906653 2340 7dc909ef29365c90223979df0bdf46b2 "xelatex"
-  "build/main.toc" 1739906653 166 4ee1351c777d0f7e88a316d9ab3b88e8 "xelatex"
-  "e:/MÁSTER MPOWER/ASIGNATURAS/Máquinas Eléctricas/Alta Tensión/Trabajo/3kV-Voltage-Multiplier/Latex/main.tex" 1739906589 5368 7123473850a752c213480a6ed8b78f07 ""
-  "main.tex" 1739906589 5368 7123473850a752c213480a6ed8b78f07 ""
+  "build/main.lof" 1739907399 30 1bb04962d39b6bda471ac6c46ce13f85 "xelatex"
+  "build/main.out" 1739907399 202 3060310b16d199fb9f073de61bf9b2a1 "xelatex"
+  "build/main.run.xml" 1739907399 2340 7dc909ef29365c90223979df0bdf46b2 "xelatex"
+  "build/main.toc" 1739907399 166 4ee1351c777d0f7e88a316d9ab3b88e8 "xelatex"
+  "e:/MÁSTER MPOWER/ASIGNATURAS/Máquinas Eléctricas/Alta Tensión/Trabajo/3kV-Voltage-Multiplier/Latex/main.tex" 1739907395 5402 1673e9ff6d0d6524db203d9c6eb27d7d ""
+  "main.tex" 1739907395 5402 1673e9ff6d0d6524db203d9c6eb27d7d ""
   "portada2.pdf" 1739906521 423181 97b21be70a2ced15d81f2c7816042a28 ""
-  "resolucion.tex" 1739906589 46 b973325456734974f21210a82189fe06 ""
+  "resolucion_alvaro.tex" 1739907395 0 d41d8cd98f00b204e9800998ecf8427e ""
+  "resolucion_pepe.tex" 1739907395 46 b973325456734974f21210a82189fe06 ""
   (generated)
   "build/main.aux"
   "build/main.bcf"

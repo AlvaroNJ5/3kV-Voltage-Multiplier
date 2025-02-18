@@ -1,4 +1,4 @@
-This is XeTeX, Version 3.141592653-2.6-0.999995 (MiKTeX 23.10) (preloaded format=xelatex 2023.12.31)  18 FEB 2025 20:24
+This is XeTeX, Version 3.141592653-2.6-0.999995 (MiKTeX 23.10) (preloaded format=xelatex 2023.12.31)  18 FEB 2025 20:36
 entering extended mode
  restricted \write18 enabled.
  file:line:error style messages enabled.
@@ -847,7 +847,7 @@ LaTeX Info: Redefining \% on input line 1.
 
  [1
 
-] (resolucion.tex) Excluding 'comment' comment. [2]
+] (resolucion_pepe.tex) (resolucion_alvaro.tex) Excluding 'comment' comment. [2]
 
 LaTeX Warning: Empty bibliography on input line 171.
 
@@ -880,10 +880,10 @@ Package logreq Info: Writing requests to 'main.run.xml'.
 
  ) 
 Here is how much of TeX's memory you used:
- 23614 strings out of 410379
- 398788 string characters out of 5792313
+ 23620 strings out of 410379
+ 398965 string characters out of 5792313
  1913416 words of memory out of 5000000
- 44707 multiletter control sequences out of 15000+600000
+ 44710 multiletter control sequences out of 15000+600000
  558461 words of font info for 41 fonts, out of 8000000 for 9000
  1348 hyphenation exceptions out of 8191
  72i,17n,81p,778b,3934s stack positions out of 10000i,1000n,20000p,200000b,200000s

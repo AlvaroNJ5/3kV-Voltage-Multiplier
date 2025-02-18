@@ -282,9 +282,12 @@ INPUT e:\MÁSTER MPOWER\ASIGNATURAS\Máquinas Eléctricas\Alta Tensión\Trabajo\
 INPUT e:\MÁSTER MPOWER\ASIGNATURAS\Máquinas Eléctricas\Alta Tensión\Trabajo\3kV-Voltage-Multiplier\Latex\build\main.lof
 INPUT e:\MÁSTER MPOWER\ASIGNATURAS\Máquinas Eléctricas\Alta Tensión\Trabajo\3kV-Voltage-Multiplier\Latex\build\main.lof
 OUTPUT e:\MÁSTER MPOWER\ASIGNATURAS\Máquinas Eléctricas\Alta Tensión\Trabajo\3kV-Voltage-Multiplier\Latex\build\main.lof
-INPUT .\resolucion.tex
-INPUT .\resolucion.tex
-INPUT resolucion.tex
+INPUT .\resolucion_pepe.tex
+INPUT .\resolucion_pepe.tex
+INPUT resolucion_pepe.tex
+INPUT .\resolucion_alvaro.tex
+INPUT .\resolucion_alvaro.tex
+INPUT resolucion_alvaro.tex
 INPUT e:\MÁSTER MPOWER\ASIGNATURAS\Máquinas Eléctricas\Alta Tensión\Trabajo\3kV-Voltage-Multiplier\Latex\build\main.aux
 INPUT e:\MÁSTER MPOWER\ASIGNATURAS\Máquinas Eléctricas\Alta Tensión\Trabajo\3kV-Voltage-Multiplier\Latex\build\main.out
 INPUT e:\MÁSTER MPOWER\ASIGNATURAS\Máquinas Eléctricas\Alta Tensión\Trabajo\3kV-Voltage-Multiplier\Latex\build\main.out
