@@ -114,3 +114,27 @@ Por otro lado, a 200 Hz la tensión final será la siguiente:
 \begin{equation}
     V = 5\cdot2\cdot220\cdot\sqrt{2}-15.83= 3095.44\,V
 \end{equation}
+
+Por último, nos faltaría el diseño del circuito de medida. Este circuito de medida estará basado en 
+un divisor de tensión para poder medir con un fondo de escala de 200V. Además, la resistencia 
+del sensor es de 10 $M\Omega$. 
+
+El circuito de medida para el que se van a realizar los cálculos es por tanto el siguiente:
+\begin{figure}[H]
+    \centering
+    \includegraphics[width=0.5\textwidth]{img/circ_medida.png}
+    \caption{Esquema para los cálculos del circuito de medida}
+    \label{fig:esquema_med}
+\end{figure}
+
+El valor de $V_{in}$ es conocido y es el siguiente:
+\begin{equation}
+    V_{in} = 5\cdot2\cdot\sqrt{2}\cdot220 = 3111.27\,V
+\end{equation}
+
+Por otro lado, queremos que $V_s$ sea igual a 200V. Además, $R_2$ en paralelo con $R_s$ debe 
+ser menor a 10 $M\Omega$. Si fijamos el valor del paralelo en 9 $\,M\Omega$ podemos calcular 
+el valor de $R_2$:
+\begin{equation}
+    \frac{1}{9\,M\Omega} = \frac{1}{10\,M\Omega} +\frac{1}{R_2\,M\Omega} \rightarrow R_2 = 90\,M\Omega
+\end{equation}

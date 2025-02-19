@@ -2,7 +2,7 @@
 D1 N002 N007 D
 D2 0 N002 D
 C1 N002 N001 {c}
-V1 N001 0 SINE(0 {V} 50)
+V1 N001 0 SINE(0 {V} 200)
 C2 N007 0 {c}
 D3 N003 N008 D
 D4 N007 N003 D
@@ -21,14 +21,16 @@ D10 N010 N006 D
 C9 N006 N005 {c}
 C10 N011 N010 {c}
 R1 N011 0 622254
-R2 N011 N012 132.38Meg
-R3 N012 0 90Meg
-R4 N012 0 10Meg
+R2 N013 N014 {R}
+R3 N014 0 90Meg
+R4 N014 0 10Meg
+R5 N012 N013 {R}
+R6 N011 N012 {R}
 .model D D
 .lib C:\Users\Pepe\Documents\LTspiceXVII\lib\cmp\standard.dio
 * .step param f 50 200 10
 .tran 10
-.param f=50 V=220*sqrt(2)
+.param f=50 V=220*sqrt(2) R=132.38Meg/3
 .param c=150u
 * LOAD
 * MEASUREMENT CIRCUIT
