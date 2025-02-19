@@ -1,0 +1,116 @@
+\section{Desarrollo de la propuesta}
+
+Como ya se ha mencionado vamos a diseñar un circuito basado en multiplicadores 
+de tensión o duplicadores de Greinacher para conseguir a la salida los 3kV 
+especificados. 
+
+En primer lugar, vamos a calcular cuántas celdas duplicadoras son necesarias 
+en el diseño para obtener los 3kV a la salida. Para ello hay que tener en cuenta que el condesador 
+de salida de
+cada celda duplicadora se carga a una tensión igual al doble de la tensión de pico de la fuente, por lo que 
+al poner varias celdas en serie, la tensión entre el terminal positivo del último condensador 
+y la referencia (terminal negativo de la fuente) se irá duplicando. Por tanto, el cálculo 
+queda de la siguiente forma:
+\begin{equation}
+    \text{nº duplicadores} = \frac{3000\,V}{220\cdot\sqrt{2}\cdot2} = 4.821
+\end{equation}
+
+Por tanto, con cinco duplicadores de tensión podemos obtener los 3kV de continua a partir 
+de la fuente de 220 $V_{rms}$. 
+\begin{figure}[H]
+    \centering
+    \includegraphics[width=0.9\textwidth]{img/mult_final.png}
+    \caption{Esquema con los multiplicadores necesarios}
+    \label{fig:esquema_mult}
+\end{figure}
+
+Por otro lado, la corriente de salida del circuito multiplicador tiene que se 
+aproximadamente de 5 mA. Para conseguir esta corriente de salida tenemos que calcular 
+una carga que se conecte a la salida del multiplicador y que consuma esa corriente, ya que el multiplicador 
+aislado, una vez se han cargado todos los consensadores no consume ninguna corriente. La carga 
+se puede calcular fácilmente mediante la Ley de Ohm:
+\begin{equation}
+    V = R\cdot I \rightarrow R = \frac{V}{I} = \frac{5\cdot2\cdot220\cdot\sqrt{2}}{0.005} = 622254\,\Omega
+\end{equation}
+
+Este consumo de corriente provoca que los condensadores se descarguen más rápidamente, aumentando 
+el rizado y provocando una caída de tensión final, por lo que hay que emplear unos condensadores con 
+una capacidad lo suficientemente elevada para minimizar el rizado y la caída de tensión.
+
+Como hemos mencionado en las especificaciones, el rizado máximo debe ser de un $\pm$20\%. En este caso 
+realizaremos el diseño para tener un rizado de pico a pico de aproximadamente 10V, que sería un 
+rizado de aproximadamente $\pm$8\%. Para el cálculo del rizado vamos a comenzar calculándolo 
+en el supuesto de que solo tuviésemos una celda duplicadora. Si llamamos $t_1$ al tiempo en el que conduce el diodo que carga 
+el condensador y $t_2$ al tiempo en el que no conduce el diodo y, por tanto, el condensador 
+se descarga durante un ciclo, podemos expresar la corriente que el condensador aporta a la carga R de la siguiente forma (llamamos 
+q a la carga transferida en cada ciclo):
+\begin{equation}
+    I = \frac{dq}{dt} \approx \frac{q}{t_2}
+\end{equation}
+
+Como pasado el transitorio el tiempo $t_1$ es mucho menor que $t_2$ podemos aproximar 
+$t_2$ de la siguiente forma:
+\begin{equation}
+    t_2 \approx \frac{1}{f}
+\end{equation}
+
+Por otro lado, sabemos que el rizado de tensión en un condensador en función de la carga transferida 
+en un ciclo es el siguiente:
+\begin{equation}
+    \delta V = \frac{q}{C_2}
+\end{equation}
+
+Por tanto, combinando las tres ecuaciones anteriores obtenemos la siguiente ecuación:
+\begin{equation}
+    \delta V = \frac{I}{f\cdot C_2}
+\end{equation}
+
+No obstante, en una celda duplicadora, la carga primero se transfiere del condensador $C_1$ al condesador 
+$C_2$, por lo que el rizado de pico a pico total a la salida de una sola celda duplicadora será el siguiente:
+\begin{equation}
+    \delta V = \frac{I}{fC_1}+\frac{2I}{fC_2} = \frac{I}{f}\left[\frac{1}{C_1}+\frac{1}{C_2}\right]
+\end{equation}
+
+Extrapolando este resultado a nuestro ejercicio y considerando todos los condesadores iguales con 
+una capacidad C, el rizado de pico a pico queda de la siguiente forma:
+\begin{equation}
+    \delta V = \frac{I}{fC}[1+2+3+4+5]=\frac{I}{fC}\cdot15
+\end{equation}
+
+Por tanto, para obtener un rizado pico a pico de 10V, la capacidad de los condensadores debe 
+ser la siguiente:
+\begin{equation}
+    C = \frac{I}{\delta V\cdot f}\cdot15 = \frac{0.005}{10\cdot 50}\cdot 15 = 150\,\mu F
+\end{equation}
+
+El cálculo anterior se ha realizado para una frecuencia de 50 Hz porque es más restrictivo, 
+ya que a menor frecuencia mayor rizado. Podemos comprobar el rizado de pico a pico que se obtendrá con ese condensador 
+a 200 Hz:
+\begin{equation}
+    \delta V = \frac{I}{fC}\cdot15 = \frac{0.005}{200\cdot 150\,\mu F}\cdot15 = 2.5\,V
+\end{equation}
+
+Por otro lado, podemos calcular la caída de tensión que va a provocar una carga con ese 
+consumo de corriente. A partir de la expresión obtenida en la referencia \textbf{---CITAR REFERENCIA---}:
+\begin{equation}
+    V_{\text{drop}} = \frac{I}{fC}\left(\frac{2n^3}{3}+\frac{n^2}{2}-\frac{n}{6}\right)
+\end{equation}
+
+En la ecuación anterior, n es el número de celdas duplicadoras por lo que sustituyendo datos a 50 Hz 
+la caída del voltaje final es la siguiente:
+\begin{equation}
+    V_{\text{drop}} = \frac{0.005}{50\cdot 150\,\mu F}\left(\frac{2\cdot5^3}{3}+\frac{5^2}{2}-\frac{5}{6}\right) = 63.33\,V
+\end{equation}
+
+Por tanto, el voltaje medio de salida que obtendremos con esa carga a 50 Hz será el siguiente:
+\begin{equation}
+    V = 5\cdot2\cdot220\cdot\sqrt{2}-V_{\text{drop}} = 3047.93\,V
+\end{equation}
+
+Por otro lado, a 200 Hz la tensión final será la siguiente:
+\begin{equation}
+    V_{\text{drop}} = \frac{0.005}{200\cdot 150\,\mu F}\left(\frac{2\cdot5^3}{3}+\frac{5^2}{2}-\frac{5}{6}\right) = 15.83\,V
+\end{equation}
+\begin{equation}
+    V = 5\cdot2\cdot220\cdot\sqrt{2}-15.83= 3095.44\,V
+\end{equation}
