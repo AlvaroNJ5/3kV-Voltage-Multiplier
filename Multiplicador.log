@@ -1,25 +1,27 @@
-LTspice 24.1.3 for Windows
-Circuit: C:\Users\alvar\Desktop\MPOWER\Maquinas Electricas y Alta Tension\TrabajoAltaTension\Multiplicador.net
-Start Time: Thu Feb 20 17:40:05 2025
-solver = Normal
-Maximum thread count: 16
+Circuit: * E:\MÁSTER MPOWER\ASIGNATURAS\Máquinas Eléctricas\Alta Tensión\Trabajo\3kV-Voltage-Multiplier\Multiplicador.asc
+
+Limiting rise time of source v2 to 0.001
+Limiting fall time of source v2 to 0.001
+WARNING: Node NC_02 is floating.
+
+WARNING: Less than two connections to node NC_01.  This node is used by V2.
+WARNING: Less than two connections to node NC_02.  This node is used by V2.
+Direct Newton iteration for .op point succeeded.
+
+Date: Thu Feb 20 19:51:44 2025
+Total elapsed time: 0.965 seconds.
+
 tnom = 27
 temp = 27
-method = trap
-C:\Users\alvar\Desktop\MPOWER\Maquinas Electricas y Alta Tension\TrabajoAltaTension\Multiplicador.net(29): Limiting rise time to 0.001.
-
-V2 Vin 0 PULSE({Vneg} {V} 0 0 0 0.01 0.02)
-^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
-C:\Users\alvar\Desktop\MPOWER\Maquinas Electricas y Alta Tension\TrabajoAltaTension\Multiplicador.net(29): Limiting fall time to 0.001.
-
-V2 Vin 0 PULSE({Vneg} {V} 0 0 0 0.01 0.02)
-^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
-WARNING: Node nc_02 is floating.
-
-Direct Newton iteration for .op point succeeded.
-Total elapsed time: 1.134 seconds.
-
-Files loaded:
-C:\Users\alvar\Desktop\MPOWER\Maquinas Electricas y Alta Tension\TrabajoAltaTension\Multiplicador.net
-C:\Users\alvar\AppData\Local\LTspice\lib\cmp\standard.dio
+method = modified trap
+totiter = 139535
+traniter = 139522
+tranpoints = 29874
+accept = 23074
+rejected = 6800
+matrix size = 18
+fillins = 0
+solver = Normal
+Matrix Compiler1: 1.37 KB object code size  0.3/0.2/[0.2]
+Matrix Compiler2: 1.42 KB object code size  0.2/0.2/[0.2]
 

@@ -24,10 +24,15 @@ de la fuente de 220 $V_{rms}$.
     \label{fig:esquema_mult}
 \end{figure}
 
+Con este esquema, idealmente y sin carga tendremos a la salida la siguiente tensión:
+\begin{equation}
+    V = 5\cdot2\cdot220\cdot\sqrt{2} = 3111.27\,V
+\end{equation}
+
 Por otro lado, la corriente de salida del circuito multiplicador tiene que se 
 aproximadamente de 5 mA. Para conseguir esta corriente de salida tenemos que calcular 
 una carga que se conecte a la salida del multiplicador y que consuma esa corriente, ya que el multiplicador 
-aislado, una vez se han cargado todos los consensadores no consume ninguna corriente. La carga 
+aislado, una vez se han cargado todos los consensadores, no consume ninguna corriente. La carga 
 se puede calcular fácilmente mediante la Ley de Ohm:
 \begin{equation}
     V = R\cdot I \rightarrow R = \frac{V}{I} = \frac{5\cdot2\cdot220\cdot\sqrt{2}}{0.005} = 622254\,\Omega
@@ -41,8 +46,8 @@ Como hemos mencionado en las especificaciones, el rizado máximo debe ser de un 
 realizaremos el diseño para tener un rizado de pico a pico de aproximadamente 10V, que sería un 
 rizado de aproximadamente $\pm$8\%. Para el cálculo del rizado vamos a comenzar calculándolo 
 en el supuesto de que solo tuviésemos una celda duplicadora. Si llamamos $t_1$ al tiempo en el que conduce el diodo que carga 
-el condensador y $t_2$ al tiempo en el que no conduce el diodo y, por tanto, el condensador 
-se descarga durante un ciclo, podemos expresar la corriente que el condensador aporta a la carga R de la siguiente forma (llamamos 
+el condensador en cada ciclo y $t_2$ al tiempo en el que no conduce el diodo, es decir, el tiempo de descarga 
+del condensador en cada ciclo, podemos expresar la corriente que el condensador aporta a la carga R de la siguiente forma (llamamos 
 q a la carga transferida en cada ciclo):
 \begin{equation}
     I = \frac{dq}{dt} \approx \frac{q}{t_2}
@@ -91,7 +96,7 @@ a 200 Hz:
 \end{equation}
 
 Por otro lado, podemos calcular la caída de tensión que va a provocar una carga con ese 
-consumo de corriente. A partir de la expresión obtenida en la referencia \textbf{---CITAR REFERENCIA---}:
+consumo de corriente. A partir de la expresión obtenida en la referencia \cite{park2015reduction}:
 \begin{equation}
     V_{\text{drop}} = \frac{I}{fC}\left(\frac{2n^3}{3}+\frac{n^2}{2}-\frac{n}{6}\right)
 \end{equation}
@@ -122,7 +127,7 @@ del sensor es de 10 $M\Omega$.
 El circuito de medida para el que se van a realizar los cálculos es por tanto el siguiente:
 \begin{figure}[H]
     \centering
-    \includegraphics[width=0.5\textwidth]{img/circ_medida.png}
+    \includegraphics[width=0.4\textwidth]{img/circ_medida.png}
     \caption{Esquema para los cálculos del circuito de medida}
     \label{fig:esquema_med}
 \end{figure}
@@ -137,4 +142,42 @@ ser menor a 10 $M\Omega$. Si fijamos el valor del paralelo en 9 $\,M\Omega$ pode
 el valor de $R_2$:
 \begin{equation}
     \frac{1}{9\,M\Omega} = \frac{1}{10\,M\Omega} +\frac{1}{R_2\,M\Omega} \rightarrow R_2 = 90\,M\Omega
+\end{equation}
+
+Por último, obtenemos el valor de $R_1$ a partir del divisor de tensión:
+\begin{equation}
+    V_s = Vin\cdot\frac{R_2//R_s}{R_1+R_2//R_s} \rightarrow R_1 = \frac{(R_2//R_s)\cdot(V_{in}-V_s)}{V_s}
+\end{equation}
+
+Sustituyendo valores, el valor de la resistencia $R_1$ queda:
+\begin{equation}
+    R_1 = \frac{90\,M\Omega\cdot(3111.27\,V-200\,V)}{200\,V} = 131.007\,M\Omega
+\end{equation}
+
+No obstante, uno de los requerimientos de diseño es que los componentes tuviesen una tensión de trabajo 
+inferior a 1000V. En la resistencia $R_1$ en las condiciones de diseño va a caer aproximadamente la siguiente tensión:
+\begin{equation}
+    V_{R1} = 3111.27\,V-200\,V = 2911.27\,V > 1000\,V
+\end{equation}
+
+Por tanto, si dividimos la resistencia $R_1$ en tres resistencias iguales, cada una tendrá una 
+tensión de trabajo igual a un tercio de la tensión de trabajo de $R_1$, es decir:
+\begin{equation}
+    V_{R'} = \frac{V_{R1}}{3} = \frac{2911.27}{3} = 970.42\,V < 100\,V
+\end{equation}
+
+Por tanto, el circuito final del multiplicador de tensión con la carga y el circuito de medida 
+de tensión queda de la siguiente forma:
+\begin{figure}[H]
+    \centering
+    \includegraphics[width=1\textwidth]{img/circ_final.png}
+    \caption{Circuito final}
+    \label{fig:esquema_final}
+\end{figure}
+
+Por último, podemos calcular el consumo de corriente máxima aproximado que consume el circuito de medida\footnote{Nos referimos 
+a la corriente máxima que consume el circuito de medida porque estamos considerando la tensión 
+de salida teórica sin caída debido a la carga.}:
+\begin{equation}
+    I_{meas} = \frac{V_{in}}{R_{total}} = \frac{3111.27}{9\,M\Omega+131.007\,M\Omega} = 22.22\,\mu A
 \end{equation}
