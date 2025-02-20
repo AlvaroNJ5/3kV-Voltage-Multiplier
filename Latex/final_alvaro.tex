@@ -1,7 +1,7 @@
 \section{Verificaciones}
 
 En esta sección se va a justificar mediante las simulaciones necesarias que el funcionamiento del circuito es el correcto.
-Primero, se comprueba que la tensión de salida sin carga es igual a la esperada. En la figura \ref{Vout_50Hz} se puede ver que, al transcurrir
+Primero, se comprueba que la tensión de salida sin carga es igual a la esperada. En la figura \ref{Vout_50hz} se puede ver que, al transcurrir
 un tiempo de aproximadamente 5 segundos, la tensión de salida se estabiliza en $3101V$, valor que supone un error mínimo del $0,33\%$
 respecto a la tensión de salida esperada sin carga ($3111,27V$), como se puede ver en la siguiente expresión:
 
@@ -106,3 +106,34 @@ un valor medio de $3044V$ exactamente igual que el obtenido con la senoidal de m
     \caption{Tensión de salida y entrada con señal de entrada de onda cuadrada}
     \label{cuadrada}
 \end{figure}
+
+\section{Conclusiones}
+
+En esta práctica se ha llevado a cabo el diseño y simulación de un 
+circuito multiplicador de Greinacher capaz de proporcionar a la salida 
+3 kV a partir de una fuente de 220 V, asegurando un adecuado suministro de 
+corriente sin un rizado y caída de tensión significativo. Para lograrlo se ha realizado 
+un dimensionamiento de los condensadores a partir de un valor seleccionado de rizado de pico a 
+pico máximo igual a 10V.
+
+Por otro lado, se ha diseñado un circuito sencillo de medida de tensión a partir de un divisor 
+de tensión de tal forma que se puede medir la tensión de salida del multiplicador en un fondo 
+de escala de 200V.
+
+Además, en las simulaciones se ha podido comprobar el correcto funcionamiento del circuito y la fiabilidad 
+de los cálculos teóricos, los cuales han proporcionado aproximaciones con poco error.
+
+Con los resultados obtenidos se puede destacar el atractivo de este tipo de soluciones para conseguir 
+una elevada tensión a partir de una estructura sencilla basada en diodos y condensadores para aplicaciones 
+que requieran de una elevada tensión sin la complejidad de circuitos conmutados o transformadores. También se 
+destaca la funcionalidad del multiplicador diseñado, el cual ha demostrado ser apto para un amplio rango 
+de frecuencias (de 50 a 200 Hz) y para una señal senoidal y cuadrada.
+
+Por otro lado, estos circuitos presentan ciertas limitaciones que deben considerarse. En aplicaciones con 
+cargas altamente variables, la caída de tensión resultante puede afectar a su rendimiento. Asimismo, su empleo puede 
+ser complicado en aplicaciones 
+con mucha variación de la frecuencia, especialmente cuando la frecuencia es demasiado baja. Otro inconveniente es el tiempo de carga relativamente lento, lo que puede 
+ser problemático en sistemas que requieran una respuesta rápida en la elevación de la tensión. Por último, este tipo 
+de circuitos suelen estar restringidos a aplicaciones de baja potencia, ya que su capacidad 
+de suministrar corriente es limitada.
+
