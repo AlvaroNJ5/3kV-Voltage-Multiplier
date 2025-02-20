@@ -37,3 +37,72 @@ para la tensión media es mínimo:
 \begin{equation}
     E_{V_{load}} = \frac{3047,93V - 3044V}{3047,93V} \cdot 100 = 0,13\%
 \end{equation}
+
+Respecto a la corriente, se analiza en la figura \ref{Corrientes} la corriente que circula a través de la carga y la que circula a través del circuito
+de medida. Puesto que, como se explica en la sección anterior, la tensión de salida es ligeramente menor a la esperada, en consecuencia la corriente en la carga también lo será,
+midiendo un valor de $4.898mA$. La corriente a través del circuito de medida se ha diseñado para no ser significativa, dando un valor de $21,718\mu A$.
+El error cometido en la corriente a través de la carga es el siguiente:
+
+\begin{equation}
+    E_{I_{load}} = \frac{5mA - 4,898mA}{5mA} \cdot 100 = 2,04\%
+\end{equation}
+
+\begin{figure}[H]
+    \centering
+    \includegraphics[width=1\textwidth]{Imagenes_alvaro/Corrientes.png}
+    \caption{Corriente en la carga y sistema de medida}
+    \label{Corrientes}
+\end{figure}
+
+Por otra parte, también es necesario analizar la tensión máxima en los semiconductores y condensadores, cuyo resultado se puede ver en la figura \ref{Vmax}.
+La tensión máxima es de $618,33V$ (aproximadamente el doble a la de la fuente), mucho menor a los $1000V$ 
+establecidos como máximo, por lo que este requerimiento está cumplido. Además, cabe destacar que el primer 
+condensador (C1) se carga a una tensión igual a la de la fuente, por lo que se puede utilizar un condensador de menor rango de tensión para este caso.
+
+\begin{figure}[H]
+    \centering
+    \includegraphics[width=1\textwidth]{Imagenes_alvaro/Vmax.png}
+    \caption{Tensión máxima en condensadores y diodos}
+    \label{Vmax}
+\end{figure}
+
+También es necesario comprobar que la tensión en el multímetro no supera los $200V$ establecidos. Puesto que se definió el divisor para obtener $200V$
+para la máxima tensión de salida posible ($3111,27V$), en este caso la tensión medida será necesariamente menor, dando un valor de $195,91V$ como se puede ver en la figura
+\ref{V_mult}.
+
+\begin{figure}[H]
+    \centering
+    \includegraphics[width=1\textwidth]{Imagenes_alvaro/V_mult.png}
+    \caption{Tensión en el multímetro}
+    \label{V_mult}
+\end{figure}
+
+En la figura \ref{200hz} se puede ver la tensión de salida y corriente de carga a 50Hz (gráfica roja), 100Hz (gráfica azul), 150Hz (gráfica verde)
+y 200Hz (gráfica azul claro). Como se ha calculado previamente la tensión obtenida aumenta con la frecuencia, lo que produce un aumento de la corriente en consecuencia.
+Se obtiene una tensión de salida de $3090V$ y una corriente de carga de $4,963mA$ para una frecuencia de 200Hz. Obtenemos los errores respecto a los valores esperados:
+
+\begin{equation}
+    E_{V_{load-200Hz}} = \frac{3095,44V - 3090V}{3095,44V} \cdot 100 = 0,18\%
+\end{equation}
+
+\begin{equation}
+    E_{I_{load-200Hz}} = \frac{5mA - 4,963mA}{5mA} \cdot 100 = 0,74\%
+\end{equation}
+
+\begin{figure}[H]
+    \centering
+    \includegraphics[width=1\textwidth]{Imagenes_alvaro/200hz.png}
+    \caption{Tensión de salida y corriente en la carga para múltiples frecuencias}
+    \label{200hz}
+\end{figure}
+
+Finalmente, se comprueba al funcionamiento del circuito para una señal de entrada cuadrada de 50Hz, con valores máximos y mínimos iguales a los valores
+de pico positivo y negativo de la senoidal y con un ciclo de trabajo del 50\%. El resultado se puede ver en la figura \ref{cuadrada}, donde se obtiene
+un valor medio de $3044V$ exactamente igual que el obtenido con la senoidal de misma frecuencia. También se mantiene el mismo rizado de $10V$ del caso anterior.
+
+\begin{figure}[H]
+    \centering
+    \includegraphics[width=1\textwidth]{Imagenes_alvaro/cuadrada.png}
+    \caption{Tensión de salida y entrada con señal de entrada de onda cuadrada}
+    \label{cuadrada}
+\end{figure}
